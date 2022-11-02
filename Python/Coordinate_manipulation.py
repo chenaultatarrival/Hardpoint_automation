@@ -4,21 +4,23 @@ import numpy as np
 class Point:
     def __init__(self, x, y, z):
         self.x, self.y, self.z = x, y, z
+        # ? --- Walid --- this didn't work because __str__ returned a non-string
+        # return [self.x, self.y, self.z]
 
-    #def __str__(self):
-        #return "{}, {}, {}".format(self.x, self.y, self.z)
-        
-        #? --- WALID --- this didn't work because __str__ returned a non-string
-        #return [self.x, self.y, self.z]
+    def point(self):
+        return [self.x, self.y, self.z]
 
-    def __neg__(self):
-        return Point(-self.x, -self.y, -self.z)
 
-    def __add__(self, point):
-        return Point(self.x + point.x, self.y + point.y, self.z + point.z)
-
-    def __sub__(self, point):
-        return self + -point
+#    def __str__(self):
+#        return "{}, {}, {}".format(self.x, self.y, self.z)
+#    def __neg__(self):
+#        return Point(-self.x, -self.y, -self.z)
+#
+#    def __add__(self, point):
+#        return Point(self.x + point.x, self.y + point.y, self.z + point.z)
+#
+#    def __sub__(self, point):
+#        return self + -point
 
 
 class Coordinate_system:
@@ -26,7 +28,7 @@ class Coordinate_system:
         # self.origin, self.x, self.y = p1, p2, p3
         coordinate_matrix = np.array(p1, p2, p3)
 
-    #def __str__(self):
+    # def __str__(self):
     #    return "{}, {}, {}".format(self.origin, self.x, self.y)
 
 
